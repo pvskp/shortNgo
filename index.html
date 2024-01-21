@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTMX Exemplo</title>
+    <script src="https://cdn.jsdelivr.net/npm/htmx.org@1.5.0/dist/htmx.min.js"></script>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+        }
+        form {
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>ShortNGo</h2>
+        <form hx-post="/process" hx-target="#resultado">
+            <label for="url">Type long url:</label>
+            <input type="text" id="url" name="url">
+            <button type="submit">Generate</button>
+        </form>
+        <div id="resultado" hx-swap="outerHTML"></div>
+    </div>
+</body>
+</html>
+
