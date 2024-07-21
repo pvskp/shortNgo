@@ -1,4 +1,4 @@
-module github.com/pvskp/gourl
+module github.com/pvskp/shortNgo
 
 go 1.21.6
 

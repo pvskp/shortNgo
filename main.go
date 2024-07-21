@@ -8,7 +8,7 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/pvskp/gourl/database"
+	"github.com/pvskp/shortNgo/database"
 	"github.com/spaolacci/murmur3"
 )
 
