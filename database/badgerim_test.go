@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func setupBadgerIM(t *testing.T) *BadgerIM {
+func setupBadgerIM(t *testing.T) *badgerIM {
 	opts := badger.DefaultOptions("").WithInMemory(true)
 	opts.IndexCacheSize = 100 << 20
 
@@ -13,12 +13,12 @@ func setupBadgerIM(t *testing.T) *BadgerIM {
 	if err != nil {
 		t.Fatalf("Error opening BadgerIM: %s", err)
 	}
-	return &BadgerIM{
+	return &badgerIM{
 		db: db,
 	}
 }
 
-func tearDownBadgerIM(b *BadgerIM) {
+func tearDownBadgerIM(b *badgerIM) {
 	b.db.Close()
 }
 

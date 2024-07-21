@@ -7,11 +7,11 @@ import (
 	badger "github.com/dgraph-io/badger/v4"
 )
 
-type BadgerIM struct {
+type badgerIM struct {
 	db *badger.DB
 }
 
-func (b *BadgerIM) HashExists(hash string) bool {
+func (b *badgerIM) HashExists(hash string) bool {
 	err := b.db.View(func(txn *badger.Txn) error {
 		_, err := txn.Get([]byte(hash))
 		if err != nil {
@@ -34,7 +34,7 @@ func (b *BadgerIM) HashExists(hash string) bool {
 	return true
 }
 
-func (b *BadgerIM) GetHashValue(hash string) (value string, err error) {
+func (b *badgerIM) GetHashValue(hash string) (value string, err error) {
 	var valueCopy []byte
 
 	err = b.db.View(func(txn *badger.Txn) error {
@@ -62,7 +62,7 @@ func (b *BadgerIM) GetHashValue(hash string) (value string, err error) {
 	return
 }
 
-func (b *BadgerIM) SaveHash(hash, value string) (err error) {
+func (b *badgerIM) SaveHash(hash, value string) (err error) {
 	err = b.db.Update(func(txn *badger.Txn) error {
 		err := txn.Set([]byte(hash), []byte(value))
 		if err != nil {
@@ -75,7 +75,7 @@ func (b *BadgerIM) SaveHash(hash, value string) (err error) {
 	return
 }
 
-func NewBadgerIM() *BadgerIM {
+func newBadgerIM() *badgerIM {
 	opts := badger.DefaultOptions("").WithInMemory(true)
 	opts.IndexCacheSize = 100 << 20
 
@@ -83,7 +83,7 @@ func NewBadgerIM() *BadgerIM {
 	if err != nil {
 		log.Fatalf("Error opening BadgerIM: %s", err)
 	}
-	return &BadgerIM{
+	return &badgerIM{
 		db: db,
 	}
 }
