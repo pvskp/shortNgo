@@ -1,45 +1,28 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTMX Exemplo</title>
+  <head>
+    <title>ShortNGo</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/htmx.org@1.5.0/dist/htmx.min.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-    <style>
-        body, html {
-            height: 100%;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: "Roboto Mono", monospace;
-            font-style: normal;
-        }
-        .container {
-            text-align: center;
-        }
-        .main-title {
-            margin-top: -120px;
-        }
-        form {
-            margin: 20px;
-        }
-    </style>
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <div class="container">
-        <h2 class="main-title">ShortNGo</h2>
-        <form hx-post="/process" hx-target="#resultado">
-            <label for="url">Type long url:</label>
-            <input type="text" id="url" name="url">
-            <button type="submit">Generate</button>
-        </form>
-        <div id="resultado" hx-swap="outerHTML"></div>
+      <h2 class="main-title">ShortNGo</h2>
+      <form hx-post="/process" hx-target="#resultado">
+        <label for="url">Type long url:</label>
+        <input type="text" id="url" name="url" />
+        <button type="submit">Generate</button>
+      </form>
+      <div id="resultado" hx-swap="outerHTML"></div>
     </div>
-</body>
+  </body>
 </html>
-

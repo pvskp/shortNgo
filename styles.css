@@ -1,0 +1,21 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto Mono", monospace;
+    font-style: normal;
+}
+
+.container {
+    text-align: center;
+}
+
+.main-title {
+    margin-top: -120px;
+}
+
+form {
+    margin: 20px;
+}
