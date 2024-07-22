@@ -35,7 +35,7 @@ func redirectRequest(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintln(w, "Error redirecting :(")
 		return
 	}
-	fmt.Println(w, "Redirecting to ", url)
+	log.Println("Redirecting to ", url)
 	http.Redirect(w, r, url, http.StatusPermanentRedirect)
 }
 
