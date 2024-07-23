@@ -1,21 +1,35 @@
-body, html {
-    height: 100%;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: "Roboto Mono", monospace;
-    font-style: normal;
+body {
+  background: #2e3440;
 }
 
-.container {
-    text-align: center;
+html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto Mono", monospace;
+  font-style: normal;
 }
 
 .main-title {
-    margin-top: -120px;
+  margin-top: 70px;
+}
+
+.container {
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: #eceff4;
+  height: 250px;
+  /*padding-bottom: 5px;*/
+}
+
+.input-text {
+  margin-top: 100px;
 }
 
 form {
-    margin: 20px;
+  margin: 20px;
+  margin-bottom: 150px;
 }
